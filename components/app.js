@@ -20,13 +20,13 @@ angular
         url: '/',
         views: {
           querybar: {
-            templateUrl: '/components/query-bar/query-bar.html',
+            templateUrl: 'components/query-bar/query-bar.html',
           },
           map: {
-            templateUrl: '/components/google-map/google-map.html',
+            templateUrl: 'components/google-map/google-map.html',
           },
           right: {
-            templateUrl: '/components/place-detail/place-detail.html',
+            templateUrl: 'components/place-detail/place-detail.html',
           }
         }
       })
