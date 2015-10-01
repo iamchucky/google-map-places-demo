@@ -1,0 +1,15 @@
+
+<div ng-controller="PlaceDetailController as pdCtrl">
+  <div class="result-list">
+    <div ng-repeat="p in pdCtrl.places track by $index" ng-class="{&quot;active&quot;: p.isActive}" ng-click="pdCtrl.cardClicked(p.letter)" class="result-card well"><span>{{ p.letter }}</span>
+      <h4>{{ p.name }}</h4>
+      <div ng-show="p.price_level_str" class="price-level">{{ p.price_level_str }}</div>
+      <div>Rating {{ p.rating }}</div>
+      <div ng-show="p.opening_hours"> 
+        <div ng-show="p.opening_hours &amp;&amp; p.opening_hours.open_now">Open now</div>
+        <div ng-repeat="t in p.opening_hours.weekday_text">{{ t }}</div>
+      </div>
+      <div class="photo"><img ng-src="{{ p.photos[0].getUrl({maxWidth:383}) }}"/></div>
+    </div>
+  </div>
+</div>

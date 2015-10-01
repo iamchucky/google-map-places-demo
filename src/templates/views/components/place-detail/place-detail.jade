@@ -1,0 +1,17 @@
+div(ng-controller='PlaceDetailController as pdCtrl')
+  .result-list: .result-card.well(ng-repeat='p in pdCtrl.places track by $index', ng-class='{"active": p.isActive}', ng-click='pdCtrl.cardClicked(p.letter)')
+    span {{ p.letter }}
+    h4 {{ p.name }}
+
+    .price-level(ng-show='p.price_level_str') {{ p.price_level_str }}
+
+    div Rating {{ p.rating }}
+    div(ng-show='p.opening_hours') 
+      div(ng-show='p.opening_hours && p.opening_hours.open_now') Open now
+      div(ng-repeat='t in p.opening_hours.weekday_text') {{ t }}
+
+    .photo
+      img(ng-src='{{ p.photos[0].getUrl({maxWidth:383}) }}')
+
+
+
