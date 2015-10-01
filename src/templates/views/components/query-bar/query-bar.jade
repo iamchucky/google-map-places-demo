@@ -1,5 +1,0 @@
-div(ng-controller='QueryBarController as qbCtrl')
-  .row: .col-lg-6: .input-group
-    input.form-control#query-bar(type='text', ng-model='qbCtrl.query', placeholder='Search for hotels near a city...')
-    span.input-group-btn: button.btn.btn-default(type='button', ng-click='qbCtrl.sendQuery()')
-      span.glyphicon.glyphicon-search
